@@ -17,7 +17,7 @@ const Home = () => {
 
                                 <div className="col-md-6">
                                     <img src={image} className="img-fluid mx-auto animated" alt="" />
-                                </div>
+                                </div> 
                             </div>
                         </div>
                     </div>
