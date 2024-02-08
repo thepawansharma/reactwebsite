@@ -1,4 +1,4 @@
-import React from "react";
+hiimport React from "react";
 import { NavLink } from 'react-router-dom';
 import './index.css';
 
@@ -10,7 +10,7 @@ const Navbar = () => {
                     <div className='col-10 mx-auto'>
                         <nav className="navbar navbar-expand-lg bg-light">
                             <div className="container-fluid">
-                                <NavLink className="navbar-brand" to="/" style={{fontFamily: 'math', borderBottom: 'none'}}>The Pawan Kumar Sharma</NavLink>
+                                <NavLink className="navbar-brand" to="/" style={{fontFamily: 'math', borderBottom: 'none'}}>The Pawan Kumar Sharma delhi</NavLink>
                                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span className="navbar-toggler-icon"></span>
                                 </button>
