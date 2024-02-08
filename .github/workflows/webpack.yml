@@ -1,28 +1,44 @@
-name: NodeJS with Webpack
+name: Deploy to Production
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - main  # Adjust the branch name as needed
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-
     steps:
-    - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
-    - name: Build
-      run: |
-        npm install
-        npx webpack
+      - name: Install dependencies
+        run: npm install  # Adjust this command if you're using a different package manager
+
+      - name: Build
+        run: npm run build  # Adjust this command based on your build process
+
+      # Example: Deploying to a cloud platform (replace with your deployment method)
+      - name: Deploy to AWS S3
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --exclude '.git/*' --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      # Example: Notify on Slack (optional)
+      - name: Notify on Slack
+        uses: rtCamp/action-slack-notify@v2.0
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+        with:
+          args: '{ "text": "Deployment to production is successful." }'
+
