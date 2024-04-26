@@ -7,7 +7,7 @@ const Contact = () => {
                 <div className='row'>
                     <div className='col-10 mx-auto'>
                         <div className="row">
-                        <h2 className="headborder text-center my-4 p-3">Get in touch with us</h2>
+                        <h2 className="headborder text-center mt-4 p-3">Get in touch with us</h2>
                             <div className="col-md-8">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Full Name</label>
@@ -30,7 +30,9 @@ const Contact = () => {
                                 <h3 className="contact">Contact Us</h3>
                                 <ul class="contact-info">
                                     <li><label>Address :</label> F-75, Mangalam City, Kalwar Road, Jhotwara Jaipur (Rajasthan) - 302012 </li>
-                                    <li><label>Phone :</label> +91 9461630681, 9079103545 <br /> +91 9461630681, 9079103545 </li>
+                                    <br></br>
+                                    <li><label>Phone :</label> +91 9461630681, 9079103545 </li>
+                                    <br></br>
                                     <li><label>Email : </label> sn.pksharma@gmail.com </li>
                                 </ul>
                             </div>
