@@ -4,7 +4,7 @@ const Contact = () => {
     return (
         <>
             <div className='container-fluid'>
-                <div className='row mt-5'>
+                <div className='row my-5'>
                     <div className='col-10 mx-auto'>
                         <div className="row">
                         <h2 className="headborder text-center mb-4 p-3">Get in touch with us</h2>
